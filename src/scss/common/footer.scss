@@ -1,0 +1,118 @@
+.footer {
+    @include adaptive-value("padding-top", 120, 80, 1);
+    @include adaptive-value("padding-bottom", 60, 40, 1);
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $dark;
+        opacity: 0.1;
+    }
+
+    // .footer__container
+
+    &__container {
+    }
+
+    // .footer__body
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    // .footer__left
+
+    &__left {
+        max-width: 345px;
+
+        p {
+            margin-top: 1em;
+        }
+
+        ul {
+            margin-top: 30px;
+        }
+    }
+
+    // .footer__logo
+
+    &__logo {
+        display: block;
+        width: fit-content;
+
+        img,
+        svg {
+            width: 180px;
+        }
+    }
+
+    nav {
+        margin: 0 auto 0 8vw;
+
+        @media (max-width: 768px) {
+            margin: 40px 0;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px 5vw;
+
+            li {
+                a {
+                }
+            }
+        }
+    }
+
+    // .footer__right
+
+    &__right {
+        text-align: right;
+        margin-left: 30px;
+
+        @media (max-width: 768px) {
+            text-align: left;
+            margin-left: 0;
+        }
+
+        ul {
+            & > :not(:last-child) {
+                margin-bottom: 16px;
+            }
+
+            li {
+                white-space: nowrap;
+
+                a {
+                    display: flex;
+                    align-items: center;
+
+                    svg,
+                    img {
+                        width: 24px;
+                        fill: transparent;
+                        stroke: $accent;
+                        stroke-width: 1.5px;
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+
+        p {
+            margin-top: 30px;
+            font-weight: 500;
+        }
+    }
+}
